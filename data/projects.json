@@ -1,0 +1,47 @@
+[
+  {
+    "id": "soc-deteccion-accesos-anomalos",
+    "title": "Detección de accesos anómalos",
+    "category": "SOC",
+    "badge": "SIEM",
+    "date": "2026-08-12",
+    "summary": "Caso de uso para detectar inicios de sesión inusuales y priorizar la respuesta del SOC.",
+    "content": "Diseño de una regla de correlación para identificar accesos desde ubicaciones atípicas, horarios inusuales y múltiples fallos de autenticación previos.\n\nEl flujo clasifica las alertas según el riesgo del usuario, el activo afectado y la presencia de indicadores adicionales. Los eventos de mayor prioridad se documentan con evidencias y se escalan al equipo de respuesta a incidentes.\n\nEl resultado es una triage más consistente, menos alertas repetidas y una investigación inicial más rápida para el analista de SOC."
+  },
+  {
+    "id": "centro-monitoreo",
+    "title": "Centro de monitoreo",
+    "category": "MONITOREO",
+    "badge": "SOC",
+    "date": "2026-08-01",
+    "summary": "Diseño de alertas y flujos de respuesta para eventos de seguridad.",
+    "content": "Implementación de un flujo de monitoreo para priorizar alertas relevantes y dar una respuesta consistente ante incidentes.\n\nEl proyecto incluyó definición de casos de uso, criterios de severidad y procedimientos de escalamiento."
+  },
+  {
+    "id": "mapa-superficie",
+    "title": "Mapa de superficie",
+    "category": "ANÁLISIS",
+    "badge": "RISK",
+    "date": "2025-10-12",
+    "summary": "Inventario y priorización de exposición para activos digitales.",
+    "content": "Mapeo de activos expuestos para comprender la superficie de ataque y ordenar las medidas de remediación según impacto y probabilidad."
+  },
+  {
+    "id": "cultura-seguridad",
+    "title": "Cultura de seguridad",
+    "category": "DEFENSA",
+    "badge": "PHISHING",
+    "date": "2024-06-20",
+    "summary": "Programa práctico de concienciación y simulación para equipos.",
+    "content": "Programa de concienciación para convertir hábitos seguros en prácticas cotidianas, usando simulaciones y material claro para los equipos."
+  },
+  {
+    "id": "39d9dfab-eded-4738-8738-a68f5d6d8457",
+    "title": "Mapa de calor ",
+    "category": "asdlkajsldkj",
+    "badge": "alksjdlakjsd",
+    "date": "2002-01-03",
+    "summary": "aslkdjalksdja;lskdjlskdjfklasjhd",
+    "content": "skdjhfaklsjhdvklmnsdlvkajhsdvklbasdklvjbkldjhvg\nklvjhkdjhv\ndjcdc\nckhldkcjd\n\nljkchjdhclkc\nkjsdhcksjdcksjd\n\nskdjchskdjhcksdc\njsdkhcksjdhc"
+  }
+]
