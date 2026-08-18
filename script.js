@@ -103,7 +103,7 @@ async function renderArticle() {
 
     if (!project) throw new Error();
 
-    document.title = `${project.title} — Lucas Security`;
+    document.title = `${project.title} — XXXXX / XXXXXXXXX`;
 
     target.innerHTML = `
       <p class="eyebrow">// ${escapeHTML(project.category)} · ${new Date(project.date).getFullYear()}</p>
