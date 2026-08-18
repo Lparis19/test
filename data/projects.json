@@ -1,4 +1,59 @@
 [
+  [
+  {
+    "id": "analisis-superficie-ataque",
+    "title": "Análisis de superficie de ataque",
+    "category": "ANALYSIS",
+    "badge": "RISK",
+    "date": "2026-02-14",
+    "summary": "Identificación, clasificación y priorización de activos expuestos para reducir la superficie de ataque de una organización.",
+    "content": "Proyecto orientado al descubrimiento de activos, servicios y puntos de exposición de una infraestructura simulada. Se realizó un inventario de hosts, puertos y servicios, clasificando los activos según criticidad y nivel de exposición. El análisis permitió establecer prioridades de remediación y proponer controles de seguridad.\n\nFlujo de análisis:\n\n[ Internet ]\n      |\n      v\n+-------------+\n|   Firewall  |\n+-------------+\n      |\n      v\n+-----------------------+\n| Activos expuestos     |\n+-----------------------+\n   |       |       |\n   v       v       v\n Web     DNS     VPN\n   |       |       |\n   +-------+-------+\n           |\n           v\n   Evaluación de riesgo\n           |\n           v\n    Priorización de\n      remediaciones\n\nHerramientas utilizadas: Nmap, RustScan, Wireshark y herramientas de enumeración DNS."
+  },
+  {
+    "id": "siem-deteccion-incidentes",
+    "title": "Implementación de SIEM y detección de incidentes",
+    "category": "DEFENSA",
+    "badge": "SIEM",
+    "date": "2026-03-08",
+    "summary": "Centralización de logs y creación de reglas de detección para identificar actividades sospechosas dentro de una infraestructura.",
+    "content": "Diseño de un laboratorio de monitoreo de seguridad utilizando fuentes de logs provenientes de servidores Linux, endpoints y dispositivos de red. Los eventos fueron centralizados para facilitar la correlación, búsqueda y detección de comportamientos anómalos.\n\nArquitectura:\n\n+-------------+       +-------------+\n| Linux       |       | Windows     |\n| Servers     |       | Endpoints   |\n+------+------+       +------+------+\n       |                     |\n       +----------+----------+\n                  |\n                  v\n          +---------------+\n          | Log Collector |\n          +-------+-------+\n                  |\n                  v\n          +---------------+\n          |      SIEM     |\n          +-------+-------+\n                  |\n          +-------+-------+\n          |               |\n          v               v\n      Detection        Dashboard\n       Rules           & Alerts\n          |\n          v\n       Incident\n       Response\n\nSe implementaron detecciones para múltiples intentos de autenticación fallidos, actividad administrativa anómala, ejecución de procesos sospechosos y posibles movimientos laterales."
+  },
+  {
+    "id": "analisis-trafico-wireshark",
+    "title": "Análisis de tráfico de red",
+    "category": "NETWORK",
+    "badge": "PCAP",
+    "date": "2026-04-21",
+    "summary": "Investigación de capturas de tráfico para identificar protocolos, anomalías y posibles indicadores de compromiso.",
+    "content": "Análisis forense de capturas PCAP obtenidas en un entorno de laboratorio. Se utilizaron filtros de Wireshark para identificar conexiones sospechosas, consultas DNS anómalas, patrones de comunicación y comportamiento de protocolos TCP/IP.\n\nModelo de análisis:\n\n+----------+\n|   PCAP   |\n+----+-----+\n     |\n     v\n+----------------+\n| Filtrado TCP   |\n| UDP / DNS / HTTP|\n+-------+--------+\n        |\n        v\n+----------------+\n| Identificación |\n| de anomalías   |\n+-------+--------+\n        |\n        v\n+----------------+\n| IOC / Evidencia|\n+-------+--------+\n        |\n        v\n+----------------+\n| Informe técnico|\n+----------------+\n\nSe documentaron indicadores como conexiones hacia destinos inusuales, patrones de resolución DNS y comunicaciones potencialmente relacionadas con actividad maliciosa."
+  },
+  {
+    "id": "respuesta-incidente-endpoint",
+    "title": "Respuesta ante incidente en endpoint",
+    "category": "DFIR",
+    "badge": "IR",
+    "date": "2026-05-17",
+    "summary": "Simulación de un incidente de seguridad en un endpoint y aplicación de un proceso estructurado de respuesta y recuperación.",
+    "content": "Simulación de un incidente provocado por la ejecución de un archivo sospechoso en una estación de trabajo. El proyecto cubre las etapas de identificación, contención, erradicación, recuperación y documentación posterior al incidente.\n\nCiclo de respuesta:\n\n       +-------------+\n       |  Detección   |\n       +------+------+\n              |\n              v\n       +-------------+\n       | Investigación|\n       +------+------+\n              |\n              v\n       +-------------+\n       |  Contención  |\n       +------+------+\n              |\n              v\n       +-------------+\n       | Erradicación |\n       +------+------+\n              |\n              v\n       +-------------+\n       | Recuperación |\n       +------+------+\n              |\n              v\n       +-------------+\n       | Lecciones    |\n       | aprendidas   |\n       +-------------+\n\nSe recopilaron evidencias, hashes de archivos, eventos del sistema y registros relevantes. Finalmente se elaboró un informe con la línea temporal del incidente y recomendaciones para evitar su recurrencia."
+  },
+  {
+    "id": "hardening-servidor-linux",
+    "title": "Hardening de servidor Linux",
+    "category": "DEFENSA",
+    "badge": "HARDENING",
+    "date": "2026-06-03",
+    "summary": "Fortalecimiento de un servidor Linux mediante reducción de superficie de ataque, control de accesos y monitoreo.",
+    "content": "Proyecto enfocado en aplicar buenas prácticas de hardening sobre un servidor Linux utilizado para alojar servicios internos. Se revisaron usuarios, permisos, servicios activos, configuración SSH, firewall, actualizaciones y mecanismos de auditoría.\n\nProceso aplicado:\n\n+-------------------+\n| Servidor Linux    |\n+---------+---------+\n          |\n    +-----+-----+----------------+\n    |           |                |\n    v           v                v\n Usuarios    Servicios        Red/Firewall\n    |           |                |\n    +-----------+----------------+\n                |\n                v\n        Configuración segura\n                |\n                v\n        +---------------+\n        | Auditoría /   |\n        | Monitoreo     |\n        +---------------+\n\nEntre las medidas aplicadas se incluyen deshabilitación de servicios innecesarios, configuración segura de SSH, políticas de contraseñas, principio de mínimo privilegio, reglas de firewall y revisión periódica de logs."
+  },
+  {
+    "id": "arquitectura-zero-trust",
+    "title": "Arquitectura Zero Trust",
+    "category": "ARCHITECTURE",
+    "badge": "ZERO TRUST",
+    "date": "2026-07-12",
+    "summary": "Diseño de una arquitectura Zero Trust basada en identidad, segmentación, mínimo privilegio y verificación continua.",
+    "content": "Diseño conceptual de una arquitectura Zero Trust para una organización con usuarios internos, usuarios remotos y aplicaciones corporativas. El modelo elimina la confianza implícita basada únicamente en la ubicación de red y requiere verificar identidad, dispositivo y contexto antes de conceder acceso.\n\nArquitectura propuesta:\n\n                 Internet\n                    |\n                    v\n            +---------------+\n            | Identity / MFA |\n            +-------+-------+\n                    |\n                    v\n             +------------+\n             |   Policy   |\n             |   Engine   |\n             +-----+------+\n                   |\n          +--------+--------+\n          |                 |\n          v                 v\n     +---------+       +---------+\n     |   User  |       | Device  |\n     | Context |       |  Trust  |\n     +----+----+       +----+----+\n          |                 |\n          +--------+--------+\n                   |\n                   v\n             +------------+\n             | Application|\n             |   Access   |\n             +------------+\n\nSe definieron políticas de acceso basadas en identidad, postura del dispositivo, ubicación, nivel de riesgo y necesidad de acceso. También se planteó segmentación de recursos y monitoreo continuo de las sesiones."
+  },
   {
     "id": "soc-deteccion-accesos-anomalos",
     "title": "Detección de accesos anómalos",
@@ -43,5 +98,15 @@
     "date": "2002-01-03",
     "summary": "aslkdjalksdja;lskdjlskdjfklasjhd",
     "content": "skdjhfaklsjhdvklmnsdlvkajhsdvklbasdklvjbkldjhvg\nklvjhkdjhv\ndjcdc\nckhldkcjd\n\nljkchjdhclkc\nkjsdhcksjdcksjd\n\nskdjchskdjhcksdc\njsdkhcksjdhc"
+  },
+  {
+    "id": "xd",
+    "title": "Keylogger ",
+    "category": "asdlkajsldkj",
+    "badge": "alksjdlakjsd",
+    "date": "2002-01-03",
+    "summary": "aslkdjalksdja;lskdjlskdjfklasjhd",
+    "content": "skdjhfaklsjhdvklmnsdlvkajhsdvklbasdklvjbkldjhvg\nklvjhkdjhv\ndjcdc\nckhldkcjd\n\nljkchjdhclkc\nkjsdhcksjdcksjd\n\nskdjchskdjhcksdc\njsdkhcksjdhc"
   }
+ ]
 ]
